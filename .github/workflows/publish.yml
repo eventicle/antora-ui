@@ -1,7 +1,9 @@
 on:
   workflow_dispatch:
-#  push:
-#    branches: ["master"]
+  push:
+    branches: ["master"]
+    tags:
+      - 'v*'
 jobs:
   build:
     runs-on: ubuntu-latest
