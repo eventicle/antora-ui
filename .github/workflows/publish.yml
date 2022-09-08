@@ -16,3 +16,10 @@ jobs:
           npm install --quiet --no-progress --cache=.cache/npm
           gulp --lint
           gulp --bundle
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/ui-bundle.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
